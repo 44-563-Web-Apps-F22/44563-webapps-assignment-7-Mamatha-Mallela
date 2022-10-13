@@ -42,6 +42,7 @@
     <button onclick="makeNewDiv()">Add value</button>
     <button onclick="get()">Get</button>
     <button onclick="spin()">Spin</button>
+    <button onclick="swap()">Swap</button>
 </body>
 <script>
     function makeNewDiv() {
@@ -74,6 +75,20 @@
             element.innerText = removeText;
             container.insertBefore(element, container.firstChild)
         }
+    }
+
+    function swap(){
+        var cyclerItems = document.getElementsByClassName("cycler");
+        len = cyclerItems.length;
+        let random1 = Math.floor(Math.random() * ((len-1) - 0 + 1) + 0);
+        let random2 = Math.floor(Math.random() * ((len-1) - 0 + 1) + 0);
+        if(random1 != random2){
+            var removeTextRandom1 = cyclerItems[random1].innerText;
+            var removeTextRandom2 = cyclerItems[random2].innerText;
+            cyclerItems[random1].innerText = removeTextRandom2;
+            cyclerItems[random2].innerText = removeTextRandom1;
+        }
+
     }
 </script>
 

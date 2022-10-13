@@ -24,6 +24,9 @@
     <p class="text-center mark" id="chests">Number of chests checked is zero.</p>
     <p class="text-center mark" id="score">Score is unknown.</p>
     <p class="text-center mark" id="help">Help report</p>
+    <p class="text-center">
+        <button class="btn btn-primary" onclick="newGame()">New Game</button>  
+    </p>
 
 
     <div class="image-grid d-flex flex-column justify-content-center align-items-center">
@@ -143,6 +146,19 @@
             score += 2;
             scoreText.innerText = 'Score is ' + score;
         }
+
+        function newGame() {
+                let random = Math.floor(Math.random() * (23 - 0 + 1) + 0);
+                console.log("Treasure position is ", random);
+                treasureLocation = random;
+                score = 0;
+                scoreText.innerText = 'Score is ' + score;
+                chestCount = 0
+                chestsText.innerText = 'Number of chests checked is  ' + chestCount;
+                ids.forEach( i => {
+                document.getElementById(i).src="TreasureChest.jpg"
+                })
+            }
     </script>
 </body>
 

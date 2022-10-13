@@ -25,8 +25,10 @@
             console.log(myTime);
         }
         function startTime() {
-            for (let i = 0; i < 4; i++) {
-                setTimeout(() => { document.getElementById('countdown').innerHTML = i }, (3 - i) * 1000)
+            let limit = Math.floor(Math.random() * (10 - 2 + 1) + 2)
+            console.log(limit)
+            for (let i = limit; i <= 10; i++) {
+                setTimeout(() => { document.getElementById('countdown').innerText = i }, Math.abs(3 - i) * 1000)
             }
             setTimeout(() => {
                 if (myTime == undefined) {
